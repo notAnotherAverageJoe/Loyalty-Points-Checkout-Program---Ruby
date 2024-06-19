@@ -1,35 +1,31 @@
-# customer.rb
-
 class Customer
-    # Class variable to keep track of the last assigned customer ID
-    @@next_customer_id = 2000
-  
-    attr_accessor :name, :email, :customer_id
-  
-    def initialize(name, email)
-      @name = name
-      @email = email
-      # Assigning the current value of @@next_customer_id and then increment it
-      @customer_id = @@next_customer_id
-      @@next_customer_id += 1
-    end
-  
-    def to_s
-      "Name: #{@name}, Email: #{@email}, Customer ID: #{@customer_id}"
-    end
-  
-    def showCust
-      puts "Name: #{@name}"
-      puts "Email: #{@email}"
-      puts "Customer ID: #{@customer_id}"
-    
-    end
-    def showRewards
-        puts "Reward Points: #{@rewards}"
+  @@next_customer_id = 2000
 
-      def farewell
-        puts "\tWe hope you have a great day #{@name}\n
-        Be sure to check your email at#{@email} for monthly coupons!"
-      end
+  attr_accessor :name, :email, :customer_id, :rewards
+
+  def initialize(name, email)
+    @name = name
+    @email = email
+    @customer_id = @@next_customer_id
+    @@next_customer_id += 1
+    @rewards = 0
+  end
+
+  def to_s
+    "Name: #{@name}, Email: #{@email}, Customer ID: #{@customer_id}"
+  end
+
+  def show_cust
+    puts "Name: #{@name}"
+    puts "Email: #{@email}"
+    puts "Customer ID: #{@customer_id}"
+  end
+
+  def show_rewards
+    puts "Reward Points: #{@rewards}"
+  end
+
+  def farewell
+    puts "\tWe hope you have a great day #{@name}\nBe sure to check your email at #{@email} for monthly coupons!"
   end
 end
